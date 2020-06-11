@@ -3,6 +3,7 @@ package upc.poo.presentacion;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import upc.poo.entidades.Contacto;
+import upc.poo.entidades.Estudiante;
 import upc.poo.entidades.Identificacion;
 import upc.poo.entidades.NombreCompleto;
 import upc.poo.entidades.Persona;
@@ -314,7 +315,7 @@ public class RegistroPersonaDialog extends javax.swing.JDialog {
             if (entidad.equals("Estudiante")) {
                 LogicaEstudiante le = new LogicaEstudiante();
 
-                le.registrar(aEntidad());
+                le.registrar((Estudiante)aEntidad());
                 JOptionPane.showMessageDialog(this, "Registro exitoso");
             }
         }

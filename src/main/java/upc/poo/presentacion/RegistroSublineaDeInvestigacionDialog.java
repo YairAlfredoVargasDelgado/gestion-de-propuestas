@@ -1,7 +1,22 @@
 package upc.poo.presentacion;
 
+import javax.swing.JOptionPane;
+import upc.poo.entidades.LineaDeInvestigacion;
+import upc.poo.logica.Logica;
+import upc.poo.logica.LogicaLineaDeInvestigacion;
+
 public class RegistroSublineaDeInvestigacionDialog extends javax.swing.JDialog {
 
+    private LogicaLineaDeInvestigacion lli = new LogicaLineaDeInvestigacion();
+    
+    private boolean validar() {
+        if (this.jTextField1.getText().isEmpty()) return false;
+        if (this.jTextArea1.getText().isEmpty()) return false;
+        return true;
+    }
+    
+    private Logica l = new LogicaLineaDeInvestigacion();
+    
     public RegistroSublineaDeInvestigacionDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -33,8 +48,18 @@ public class RegistroSublineaDeInvestigacionDialog extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("Continuar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,6 +110,19 @@ public class RegistroSublineaDeInvestigacionDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (!validar()) {
+            JOptionPane.showMessageDialog(this, "Verifique los datos antes de continuar");
+        } else {
+            LineaDeInvestigacion li = new LineaDeInvestigacion();
+            li.setNombre(this.jTextArea1.getName());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
