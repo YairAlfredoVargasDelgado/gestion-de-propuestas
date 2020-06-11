@@ -7,6 +7,8 @@ public class LineaDeInvestigacion extends EntidadBase {
     private String nombre;
     
     private Collection<SublineaDeInvestigacion> sublineasDeInvestigacion;
+    
+    private Collection<Director> directores;
 
     public String getNombre() {
         return nombre;
@@ -27,7 +29,15 @@ public class LineaDeInvestigacion extends EntidadBase {
     @Override
     public String toString() {
         return super.toString() + ";"
-                + nombre;
+                + getNombre();
+    }
+
+    public Collection<Director> getDirectores() {
+        return directores;
+    }
+
+    public void setDirectores(Collection<Director> directores) {
+        this.directores = directores;
     }
     
 }

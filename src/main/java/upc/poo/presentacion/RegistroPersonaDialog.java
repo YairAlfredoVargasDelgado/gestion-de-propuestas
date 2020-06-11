@@ -8,7 +8,7 @@ import upc.poo.entidades.NombreCompleto;
 import upc.poo.entidades.Persona;
 import upc.poo.entidades.enums.Genero;
 import upc.poo.entidades.enums.TipoDeIdentificacion;
-import upc.poo.logica.LogicaEstudiantes;
+import upc.poo.logica.LogicaEstudiante;
 
 public class RegistroPersonaDialog extends javax.swing.JDialog {
 
@@ -312,7 +312,7 @@ public class RegistroPersonaDialog extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Verifique los datos antes de continuar");
         } else {
             if (entidad.equals("Estudiante")) {
-                LogicaEstudiantes le = new LogicaEstudiantes();
+                LogicaEstudiante le = new LogicaEstudiante();
 
                 le.registrar(aEntidad());
                 JOptionPane.showMessageDialog(this, "Registro exitoso");
