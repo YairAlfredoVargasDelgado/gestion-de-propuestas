@@ -6,6 +6,7 @@ public class SublineaDeInvestigacion extends EntidadBase {
     
     private String nombre;
     private String idLineaDeInvestigacion;
+    private String descripcion;
     private LineaDeInvestigacion lineaDeInvestigacion;
     private Collection<Estudiante> estudiantes;
 
@@ -37,6 +38,7 @@ public class SublineaDeInvestigacion extends EntidadBase {
     public String toString() {
         return super.toString() + ";"
                 + getNombre() + ";"
+                + getDescripcion() + ";"
                 + getIdLineaDeInvestigacion();
     }
 
@@ -46,6 +48,20 @@ public class SublineaDeInvestigacion extends EntidadBase {
 
     public void setEstudiantes(Collection<Estudiante> estudiantes) {
         this.estudiantes = estudiantes;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
 }

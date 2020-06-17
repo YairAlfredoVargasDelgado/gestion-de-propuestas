@@ -17,6 +17,7 @@ public class DatosLineaDeInvestigacion extends Datos<LineaDeInvestigacion> {
         
         li.setId(d[0]);
         li.setNombre(d[1]);
+        li.setDescripcion(d[2]);
         
         li.setSublineasDeInvestigacion(new ArrayList<>());
         

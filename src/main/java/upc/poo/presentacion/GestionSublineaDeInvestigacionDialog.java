@@ -1,10 +1,34 @@
 package upc.poo.presentacion;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import upc.poo.entidades.SublineaDeInvestigacion;
+import upc.poo.logica.Logica;
+import upc.poo.logica.LogicaSublineaDeInvestigacion;
+
 public class GestionSublineaDeInvestigacionDialog extends javax.swing.JDialog {
+
+    private final Logica l = new LogicaSublineaDeInvestigacion();
 
     public GestionSublineaDeInvestigacionDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        cargarTabla();
+    }
+    
+    private void cargarTabla() {
+        String col[] = {"Nombre", "Descripción", "Nombre línea de investigación"};
+        DefaultTableModel dtm = new DefaultTableModel(col, 0);
+
+        ArrayList<SublineaDeInvestigacion> datos = l.getAll(false);
+
+        for (SublineaDeInvestigacion e
+                : datos) {
+            Object[] o = {e.getNombre(), e.getDescripcion(), e.getLineaDeInvestigacion().getNombre()};
+            dtm.addRow(o);
+        }
+
+        this.jTable1.setModel(dtm);
     }
 
     @SuppressWarnings("unchecked")
@@ -20,6 +44,11 @@ public class GestionSublineaDeInvestigacionDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton2.setText("Volver");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Sublineas de investigación");
 
@@ -77,8 +106,12 @@ public class GestionSublineaDeInvestigacionDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new RegistroLineaDeInvestigacionDialog(null, true).setVisible(true);
+        new RegistroSublineaDeInvestigacionDialog(null, true).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -11,14 +11,14 @@ public class GestionLineaDeInvestigacionDialog extends javax.swing.JDialog {
     private Logica l = new LogicaLineaDeInvestigacion();
 
     private void cargarTabla() {
-        String col[] = {"Nombre", "Contacto"};
+        String col[] = {"Nombre", "Descripción"};
         DefaultTableModel dtm = new DefaultTableModel(col, 0);
 
         ArrayList<LineaDeInvestigacion> datos = l.getAll(true);
 
         for (LineaDeInvestigacion e
                 : datos) {
-            Object[] o = {e.getNombre()};
+            Object[] o = {e.getNombre(), e.getDescripcion()};
             dtm.addRow(o);
         }
 
@@ -63,6 +63,11 @@ public class GestionLineaDeInvestigacionDialog extends javax.swing.JDialog {
         });
 
         jButton2.setText("Volver");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +108,10 @@ public class GestionLineaDeInvestigacionDialog extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new RegistroLineaDeInvestigacionDialog(null, true).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

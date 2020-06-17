@@ -1,0 +1,1 @@
+1;Minería de datos;Se encargar del análisis de grandes cantidades de datos.;1
