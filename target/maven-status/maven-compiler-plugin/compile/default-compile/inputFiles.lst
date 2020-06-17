@@ -1,49 +1,52 @@
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\RegistroDeOpcionDeGradoDialog.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\RegistroPersonaDialog.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\logica\Logica.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosPracticaEmpresarial.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\Director.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\logica\LogicaProyectoDeInvestigacionAplicada.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosSublineaDeInvestigacion.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosLineaDeInvestigacion.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\GestionLineaDeInvestigacionDialog.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\ComboItem.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\GestionEstudiantesDialog.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\PracticaEmpresarial.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosPersona.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\logica\LogicaEstudiante.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\EntidadBase.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\Asesor.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\Datos.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosAsesor.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\enums\Genero.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosDirector.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\EstudianteFrame.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\RegistroSublineaDeInvestigacionDialog.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\logica\LogicaPracticaEmpresarial.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosEstudianteOpcionDeGrado.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\SublineaDeInvestigacion.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\GestionAsesoresDialog.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\enums\TipoDeIdentificacion.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosProyectoDeInvestigacionAplicada.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\logica\LogicaLineaDeInvestigacion.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosOpcionDeGrado.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\Contacto.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\logica\LogicaAsesores.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\PrincipalFrame.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\RegistroLineaDeInvestigacionDialog.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\Persona.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\OpcionDeGrado.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\logica\LogicaSublineaDeInvestigacion.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\EstudianteOpcionDeGrado.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\logica\LogicaDirector.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\Identificacion.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\Estudiante.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\ProyectoDeInvestigacionAplicada.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\LineaDeInvestigacion.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\Archivo.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\App.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\GestionDirectoresDialog.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\datos\DatosEstudiante.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\entidades\NombreCompleto.java
-C:\Users\Yair Vargas\Documents\GitHub\gestion-de-propuestas\src\main\java\upc\poo\presentacion\AdministradorDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosDirector.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosEstudianteOpcionDeGrado.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\Persona.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\GestionLineaDeInvestigacionDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\LogicaProyectoDeInvestigacionAplicada.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\RegistroPersonaDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\LogicaPracticaEmpresarial.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\Archivo.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\ProyectoDeInvestigacionAplicada.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosEstudiante.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\LogicaLineaDeInvestigacion.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\RegistroLineaDeInvestigacionDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\enums\Genero.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosLineaDeInvestigacion.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\Identificacion.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\EntidadBase.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\ComboItem.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\Logica.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\Datos.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\NombreCompleto.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\LineaDeInvestigacion.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\LogicaDirector.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\GestionDirectoresDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\LogicaAsesores.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\Director.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\GestionSublineaDeInvestigacionDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosOpcionDeGrado.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosPracticaEmpresarial.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosPersona.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\Usuario.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\LogicaUsuarios.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\GestionAsesoresDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\SublineaDeInvestigacion.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\OpcionDeGrado.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\AdministradorDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\App.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosSublineaDeInvestigacion.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\RegistroDeOpcionDeGradoDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\LogicaEstudiante.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\enums\TipoDeIdentificacion.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\PracticaEmpresarial.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\PrincipalFrame.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\RegistroSublineaDeInvestigacionDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosUsuario.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\Contacto.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosAsesor.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\logica\LogicaSublineaDeInvestigacion.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\presentacion\GestionEstudiantesDialog.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\EstudianteOpcionDeGrado.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\datos\DatosProyectoDeInvestigacionAplicada.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\Estudiante.java
+C:\Users\Araos\Documents\Workspace\Proyecto\proyecto\src\main\java\upc\poo\entidades\Asesor.java

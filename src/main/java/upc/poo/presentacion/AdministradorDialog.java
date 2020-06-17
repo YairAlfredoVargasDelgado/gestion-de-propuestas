@@ -70,6 +70,11 @@ public class AdministradorDialog extends javax.swing.JDialog {
         jMenu4.add(jMenuItem2);
 
         jMenuItem3.setText("Sublíneas de investigación");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem3);
 
         jMenuItem4.setText("Proyectos de grado");
@@ -112,6 +117,10 @@ public class AdministradorDialog extends javax.swing.JDialog {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         new GestionDirectoresDialog(null, true).setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        new GestionSublineaDeInvestigacionDialog(null, true).setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;

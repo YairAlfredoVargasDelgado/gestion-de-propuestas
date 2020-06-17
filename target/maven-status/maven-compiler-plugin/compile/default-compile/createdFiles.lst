@@ -10,9 +10,11 @@ upc\poo\datos\DatosLineaDeInvestigacion.class
 upc\poo\entidades\Persona.class
 upc\poo\logica\LogicaDirector.class
 upc\poo\presentacion\AdministradorDialog$3.class
+upc\poo\datos\DatosUsuario.class
 upc\poo\presentacion\AdministradorDialog.class
 upc\poo\presentacion\RegistroSublineaDeInvestigacionDialog.class
 upc\poo\datos\DatosPersona.class
+upc\poo\presentacion\GestionSublineaDeInvestigacionDialog$1.class
 upc\poo\datos\DatosOpcionDeGrado.class
 upc\poo\presentacion\PrincipalFrame.class
 upc\poo\App.class
@@ -31,6 +33,7 @@ upc\poo\presentacion\AdministradorDialog$4.class
 upc\poo\entidades\NombreCompleto.class
 upc\poo\entidades\Estudiante.class
 upc\poo\presentacion\GestionDirectoresDialog$1.class
+upc\poo\entidades\Usuario.class
 upc\poo\logica\LogicaLineaDeInvestigacion.class
 upc\poo\datos\Archivo.class
 upc\poo\presentacion\GestionDirectoresDialog$2.class
@@ -54,10 +57,10 @@ upc\poo\entidades\SublineaDeInvestigacion.class
 upc\poo\entidades\enums\Genero.class
 upc\poo\logica\LogicaAsesores.class
 upc\poo\presentacion\RegistroPersonaDialog$1.class
+upc\poo\logica\LogicaUsuarios.class
 upc\poo\entidades\enums\TipoDeIdentificacion.class
 upc\poo\presentacion\RegistroPersonaDialog.class
 upc\poo\entidades\PracticaEmpresarial.class
-upc\poo\presentacion\EstudianteFrame.class
 upc\poo\datos\DatosEstudiante.class
 upc\poo\presentacion\RegistroPersonaDialog$5.class
 upc\poo\datos\DatosAsesor.class

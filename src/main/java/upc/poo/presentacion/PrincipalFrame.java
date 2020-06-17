@@ -1,9 +1,37 @@
 package upc.poo.presentacion;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import upc.poo.entidades.Usuario;
+import upc.poo.logica.LogicaUsuarios;
+
 public class PrincipalFrame extends javax.swing.JFrame {
 
+    private LogicaUsuarios lu = new LogicaUsuarios();
+    
     public PrincipalFrame() {
         initComponents();
+    }
+    
+    private boolean validarCredenciales() {
+        String nombre = this.jTextField1.getText();
+        String contraseña = new String(this.jPasswordField1.getPassword());
+        
+        ArrayList<Usuario> __u = lu.get((Usuario _u) -> _u.getNombre().equals(nombre));
+        
+        if (__u.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Este usuario no está registrado");
+            return false;
+        }
+        
+        Usuario u = __u.get(0);
+        
+        if (!u.getContraseña().equals(contraseña)) {
+            JOptionPane.showMessageDialog(this, "La contraseña es incorrecta");
+            return false;
+        }
+        
+        return true;
     }
     
     @SuppressWarnings("unchecked")
@@ -31,6 +59,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         });
 
         jButton2.setText("Salir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,10 +110,16 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new AdministradorDialog(this, true).setVisible(true);
-        this.setVisible(false);
-        this.dispose();
+        if (validarCredenciales()) {
+            this.setVisible(false);
+            new AdministradorDialog(this, true).setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

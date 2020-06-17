@@ -1,6 +1,5 @@
 package upc.poo.logica;
 
-import upc.poo.datos.Datos;
 import upc.poo.datos.DatosSublineaDeInvestigacion;
 import upc.poo.entidades.SublineaDeInvestigacion;
 
