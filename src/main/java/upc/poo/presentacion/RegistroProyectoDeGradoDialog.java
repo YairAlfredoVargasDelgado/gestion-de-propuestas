@@ -29,13 +29,32 @@ public class RegistroProyectoDeGradoDialog extends javax.swing.JDialog {
     private final ArrayList<Estudiante> estudiantesSeleccionados = new ArrayList<>();
     private Director directorSeleccionado;
     private Asesor asesorSeleccionado;
+    private final int tipo;
     
     private ArrayList<LineaDeInvestigacion> li;
     
-    public RegistroProyectoDeGradoDialog(java.awt.Frame parent, boolean modal) {
+    public RegistroProyectoDeGradoDialog(java.awt.Frame parent, boolean modal, int tipo) {
         super(parent, modal);
         initComponents();
         cargarComboBoxLineasDeInvestigacion();
+        this.tipo = tipo;
+    }
+    
+    private void setearComboBoxTipo() {
+        if (tipo == 0) {
+            this.jComboBox3.setSelectedIndex(0);
+            return;
+        }
+        
+        if (tipo == 1) {
+            this.jComboBox3.setSelectedIndex(0);
+        }
+        
+        if (tipo == 2) {
+            this.jComboBox3.setSelectedIndex(1);
+        }
+        
+        this.jComboBox3.setEnabled(false);
     }
     
     private void cargarComboBoxLineasDeInvestigacion() {
