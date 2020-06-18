@@ -2,6 +2,7 @@ package upc.poo.presentacion;
 
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
+import upc.poo.entidades.Asesor;
 import upc.poo.entidades.Contacto;
 import upc.poo.entidades.Estudiante;
 import upc.poo.entidades.Identificacion;
@@ -9,11 +10,14 @@ import upc.poo.entidades.NombreCompleto;
 import upc.poo.entidades.Persona;
 import upc.poo.entidades.enums.Genero;
 import upc.poo.entidades.enums.TipoDeIdentificacion;
+import upc.poo.logica.LogicaAsesor;
 import upc.poo.logica.LogicaEstudiante;
 
 public class RegistroPersonaDialog extends javax.swing.JDialog {
 
-    private String entidad;
+    private final String entidad;
+    
+    private Persona p;
     
     private boolean validarFormulario() {
         if (this.jTextField1.getText().isEmpty()) {
@@ -49,8 +53,8 @@ public class RegistroPersonaDialog extends javax.swing.JDialog {
         return true;
     }
 
-    private Persona aEntidad() {
-        Persona p = new Persona();
+    private void aEntidad() {
+        p = new Persona();
 
         NombreCompleto n = new NombreCompleto();
         n.setPrimerNombre(this.jTextField1.getText());
@@ -73,8 +77,6 @@ public class RegistroPersonaDialog extends javax.swing.JDialog {
         p.setContacto(c);
         p.setFechaNacimiento(LocalDate.now());
         p.setGenero(Genero.values()[this.jComboBox1.getSelectedIndex()]);
-
-        return p;
     }
 
     public RegistroPersonaDialog(java.awt.Frame parent, boolean modal, String entidad) {
@@ -312,11 +314,24 @@ public class RegistroPersonaDialog extends javax.swing.JDialog {
         if (!validarFormulario()) {
             JOptionPane.showMessageDialog(this, "Verifique los datos antes de continuar");
         } else {
-            if (entidad.equals("Estudiante")) {
-                LogicaEstudiante le = new LogicaEstudiante();
-
-                le.registrar((Estudiante)aEntidad());
-                JOptionPane.showMessageDialog(this, "Registro exitoso");
+            switch (entidad) {
+                case "Estudiante":
+                    LogicaEstudiante le = new LogicaEstudiante();
+                    if (le.registrar((Estudiante)p)) {
+                        JOptionPane.showMessageDialog(this, "El registro del estudiante fue exitoso");
+                        return;
+                    }   JOptionPane.showMessageDialog(this, "El registro del estudiante falló");
+                    break;
+                case "Director":
+                    new RegistroDirectorDialog(null, true, p).setVisible(true);
+                    break;
+                default:
+                    LogicaAsesor la = new LogicaAsesor();
+                    if (la.registrar((Asesor)p)) {
+                        JOptionPane.showMessageDialog(this, "El registro del asesor fue exitoso");
+                        return;
+                    }   JOptionPane.showMessageDialog(this, "El registro del asesor falló");
+                    break;
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

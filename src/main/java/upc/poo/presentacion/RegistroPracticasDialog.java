@@ -1,10 +1,46 @@
 package upc.poo.presentacion;
 
-public class RegistroPracticas extends javax.swing.JDialog {
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import upc.poo.entidades.OpcionDeGrado;
+import upc.poo.entidades.PracticaEmpresarial;
+import upc.poo.logica.LogicaPracticaEmpresarial;
 
-    public RegistroPracticas(java.awt.Frame parent, boolean modal) {
+public class RegistroPracticasDialog extends javax.swing.JDialog {
+    
+    private final OpcionDeGrado og;
+    
+    private final LogicaPracticaEmpresarial log = new LogicaPracticaEmpresarial();
+
+    public RegistroPracticasDialog(java.awt.Frame parent, boolean modal, OpcionDeGrado og) {
         super(parent, modal);
         initComponents();
+        this.og = og;
+    }
+    
+    private boolean validar() {
+        if (jTextField1.getText().isEmpty()) {
+            return false;
+        }
+        
+        if (jTextField2.getText().isEmpty()) {
+            return false;
+        }
+        
+        if (jTextField3.getText().isEmpty()) {
+            return false;
+        }
+        
+        if (jTextField4.getText().isEmpty()) {
+            return false;
+        }
+        
+        if (jTable1.getModel().getRowCount() == 0) {
+            return false;
+        }
+        
+        return true;
     }
 
     @SuppressWarnings("unchecked")
@@ -59,11 +95,21 @@ public class RegistroPracticas extends javax.swing.JDialog {
             }
         });
 
-        jButton3.setText("VOlver");
+        jButton3.setText("Volver");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Función a desarrollar");
 
         jButton4.setText("Agregar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,24 +134,23 @@ public class RegistroPracticas extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(jTextField3))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel2)
                                             .addComponent(jLabel3))
-                                        .addGap(29, 29, 29)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(50, 50, 50)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                                            .addComponent(jTextField1)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel4))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField4)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                                            .addComponent(jTextField3))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton4)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -142,9 +187,60 @@ public class RegistroPracticas extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private ArrayList<String> obtenerFunciones() {
+        ArrayList<String> funciones = new ArrayList<>();
+        
+        for (int i = 0; i < this.jTable1.getRowCount(); i++) {
+            System.out.println(this.jTable1.getValueAt(i, 0).toString());
+            funciones.add(this.jTable1.getValueAt(i, 0).toString());
+        }
+        
+        return funciones;
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if (!validar()) {
+            JOptionPane.showMessageDialog(this, "Verifique los datos antes de continuar");
+            return;
+        }
+        
+        PracticaEmpresarial pf = new PracticaEmpresarial();
+        
+        pf.setIdAsesor(og.getIdAsesor());
+        pf.setAsesor(og.getAsesor());
+        
+        pf.setIdDirector(og.getIdDirector());
+        pf.setDirector(og.getDirector());
+        
+        pf.setIdLineaDeInvestigacion(og.getIdLineaDeInvestigacion());
+        pf.setLineaDeInvestigacion(og.getLineaDeInvestigacion());
+        
+        pf.setIdSublineaDeInvestigacion(og.getIdSublineaDeInvestigacion());
+        pf.setSublineaDeInvestigacion(og.getSublineaDeInvestigacion());
+        
+        pf.setFechaYHoraDeRecepcion(og.getFechaYHoraDeRecepcion());
+        pf.setDescripcionBreve(og.getDescripcionBreve());
+        pf.setNombreAreaODepartamento(this.jTextField3.getText());
+        pf.setRazonSocial(this.jTextField1.getText());
+        pf.setFuncionesADesarrollar(obtenerFunciones());
+        pf.setTiempoDeEjecucionEnMeses(og.getTiempoDeEjecucionEnMeses());
+        
+        if (!log.registrar(pf)) {
+            JOptionPane.showMessageDialog(this, "Falló el registro de la práctica empresarial");
+            return;
+        }
+        
+        JOptionPane.showMessageDialog(this, "Registro exitoso");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if (!this.jTextField4.getText().isEmpty())
+            ((DefaultTableModel)this.jTable1.getModel()).addRow(new Object[]{this.jTextField4.getText()});
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

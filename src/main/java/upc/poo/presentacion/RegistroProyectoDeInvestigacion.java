@@ -1,15 +1,47 @@
 package upc.poo.presentacion;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import upc.poo.entidades.OpcionDeGrado;
+import upc.poo.entidades.ProyectoDeInvestigacion;
+import upc.poo.logica.LogicaProyectoDeInvestigacion;
 
 public class RegistroProyectoDeInvestigacion extends javax.swing.JDialog {
 
     private final OpcionDeGrado opcionDeGrado;
     
+    private final LogicaProyectoDeInvestigacion lpi = new LogicaProyectoDeInvestigacion();
+    
     public RegistroProyectoDeInvestigacion(java.awt.Frame parent, boolean modal, OpcionDeGrado opcionDeGrado) {
         super(parent, modal);
         this.opcionDeGrado = opcionDeGrado;
         initComponents();
+        initTabla();
+    }
+    
+    private void initTabla() {
+        this.jTable1.setModel(new DefaultTableModel(new Object[]{"Objectivo específico"}, 0));
+    }
+    
+    private boolean validar() {
+        if (this.jTextField1.getText().isEmpty()) {
+            return false;
+        }
+        
+        if (this.jTextArea1.getText().isEmpty()) {
+            return false;
+        }
+        
+        if (this.jTextArea2.getText().isEmpty()) {
+            return false;
+        }
+        
+        if (this.jTextField3.getText().isEmpty()) {
+            return false;
+        }
+        
+        return true;
     }
 
     @SuppressWarnings("unchecked")
@@ -49,12 +81,22 @@ public class RegistroProyectoDeInvestigacion extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Continuar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Proyecto de investigación");
 
         jLabel2.setText("Objetivo general");
 
-        jButton3.setText("VOlver");
+        jButton3.setText("Volver");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Resumen");
 
@@ -63,6 +105,11 @@ public class RegistroProyectoDeInvestigacion extends javax.swing.JDialog {
         jLabel4.setText("Justificación");
 
         jButton4.setText("Agregar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -145,6 +192,61 @@ public class RegistroProyectoDeInvestigacion extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if (!this.jTextField3.getText().isEmpty())
+            ((DefaultTableModel)this.jTable1.getModel()).addRow(new Object[]{this.jTextField3.getText()});
+    }//GEN-LAST:event_jButton4ActionPerformed
+    
+    private ArrayList<String> obtenerObjetivosEspecificos() {
+        ArrayList<String> objetivosEspecificos = new ArrayList<>();
+        
+        for (int i = 0; i < this.jTable1.getRowCount(); i++) {
+            System.out.println(this.jTable1.getValueAt(i, 0).toString());
+            objetivosEspecificos.add(this.jTable1.getValueAt(i, 0).toString());
+        }
+        
+        return objetivosEspecificos;
+    }
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (validar()) {
+            ProyectoDeInvestigacion pi = new ProyectoDeInvestigacion();
+            
+            pi.setIdAsesor(opcionDeGrado.getIdAsesor());
+            pi.setAsesor(opcionDeGrado.getAsesor());
+            
+            pi.setIdDirector(opcionDeGrado.getIdDirector());
+            pi.setDirector(opcionDeGrado.getDirector());
+            
+            pi.setIdLineaDeInvestigacion(opcionDeGrado.getIdLineaDeInvestigacion());
+            pi.setLineaDeInvestigacion(opcionDeGrado.getLineaDeInvestigacion());
+            
+            pi.setIdSublineaDeInvestigacion(opcionDeGrado.getIdSublineaDeInvestigacion());
+            pi.setSublineaDeInvestigacion(opcionDeGrado.getSublineaDeInvestigacion());
+            
+            pi.setDescripcionBreve(opcionDeGrado.getDescripcionBreve());
+            pi.setFechaYHoraDeRecepcion(opcionDeGrado.getFechaYHoraDeRecepcion());
+            pi.setJustificacion(this.jTextArea2.getText());
+            pi.setNombre(opcionDeGrado.getNombre());
+            pi.setObjetivoGeneral(this.jTextField1.getText());
+            pi.setResumenDelPlanteamientoDelProblema(this.jTextArea1.getText());
+            pi.setObjetivosEspecificos(this.obtenerObjetivosEspecificos());
+            
+            if (lpi.registrar(pi)) {
+                JOptionPane.showMessageDialog(this, "El registro del proyecto de investigación fue exitoso");
+                return;
+            }
+            
+            JOptionPane.showMessageDialog(this, "El registro del proyecto de investigacion falló");
+        }
+        
+        JOptionPane.showMessageDialog(this, "Verifique los datos antes de continuar");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -2,7 +2,7 @@ package upc.poo.entidades;
 
 import java.util.Collection;
 
-public class ProyectoDeInvestigacionAplicada extends OpcionDeGrado {
+public class ProyectoDeInvestigacion extends OpcionDeGrado {
     
     private String objetivoGeneral;
     private String resumenDelPlanteamientoDelProblema;

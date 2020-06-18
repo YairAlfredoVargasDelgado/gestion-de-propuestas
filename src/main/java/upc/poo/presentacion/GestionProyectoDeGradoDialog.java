@@ -63,7 +63,7 @@ public class GestionProyectoDeGradoDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jMenu3MouseClicked
 
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-        new GestionPracticas(null, true).setVisible(true);
+        new GestionPracticasDialog(null, true).setVisible(true);
     }//GEN-LAST:event_jMenu4MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,8 +1,8 @@
 package upc.poo.presentacion;
 
-public class GestionPracticas extends javax.swing.JDialog {
+public class GestionPracticasDialog extends javax.swing.JDialog {
 
-    public GestionPracticas(java.awt.Frame parent, boolean modal) {
+    public GestionPracticasDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -85,7 +85,7 @@ public class GestionPracticas extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new RegistroPracticas(null, true).setVisible(true);
+        new RegistroProyectoDeGradoDialog(null, true).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

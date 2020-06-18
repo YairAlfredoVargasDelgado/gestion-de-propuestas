@@ -4,6 +4,7 @@ import java.util.Collection;
 
 public class Director extends Persona {
     
+    private String IdLineaDeInvestigacion;
     private LineaDeInvestigacion lineaDeInvestigacion;
     private Collection<OpcionDeGrado> opcionesDeGrado;
 
@@ -21,6 +22,14 @@ public class Director extends Persona {
 
     public void setLineaDeInvestigacion(LineaDeInvestigacion lineaDeInvestigacion) {
         this.lineaDeInvestigacion = lineaDeInvestigacion;
+    }
+
+    public String getIdLineaDeInvestigacion() {
+        return IdLineaDeInvestigacion;
+    }
+
+    public void setIdLineaDeInvestigacion(String IdLineaDeInvestigacion) {
+        this.IdLineaDeInvestigacion = IdLineaDeInvestigacion;
     }
     
 }

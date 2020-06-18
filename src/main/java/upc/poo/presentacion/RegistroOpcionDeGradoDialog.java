@@ -1,8 +1,8 @@
 package upc.poo.presentacion;
 
-public class RegistroDeOpcionDeGradoDialog extends javax.swing.JDialog {
+public class RegistroOpcionDeGradoDialog extends javax.swing.JDialog {
 
-    public RegistroDeOpcionDeGradoDialog(java.awt.Frame parent, boolean modal) {
+    public RegistroOpcionDeGradoDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }

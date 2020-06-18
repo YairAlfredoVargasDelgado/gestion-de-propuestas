@@ -6,11 +6,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import upc.poo.entidades.Asesor;
 import upc.poo.logica.Logica;
-import upc.poo.logica.LogicaAsesores;
+import upc.poo.logica.LogicaAsesor;
 
 public class GestionAsesoresDialog extends javax.swing.JDialog {
 
-    private Logica l = new LogicaAsesores();
+    private Logica l = new LogicaAsesor();
 
     private void cargarTabla() {
 

@@ -1,16 +1,16 @@
 package upc.poo.datos;
 
-import upc.poo.entidades.ProyectoDeInvestigacionAplicada;
+import upc.poo.entidades.ProyectoDeInvestigacion;
 
-public class DatosProyectoDeInvestigacionAplicada extends Datos<ProyectoDeInvestigacionAplicada> {
+public class DatosProyectoDeInvestigacionAplicada extends Datos<ProyectoDeInvestigacion> {
 
     public DatosProyectoDeInvestigacionAplicada() {
         super("proyectodeinvestigacionaplicada.txt");
     }
 
     @Override
-    public ProyectoDeInvestigacionAplicada mapear(String dato, boolean lazy) {
-        ProyectoDeInvestigacionAplicada pia = new ProyectoDeInvestigacionAplicada();
+    public ProyectoDeInvestigacion mapear(String dato, boolean lazy) {
+        ProyectoDeInvestigacion pia = new ProyectoDeInvestigacion();
         
         String[] d = dato.split(";");
         
