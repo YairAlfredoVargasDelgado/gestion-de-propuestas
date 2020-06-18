@@ -9,6 +9,8 @@ public class OpcionDeGrado extends EntidadBase {
     private String descripcionBreve;
     private String idLineaDeInvestigacion;
     private LineaDeInvestigacion lineaDeInvestigacion;
+    private String idSublineaDeInvestigacion;
+    private SublineaDeInvestigacion sublineaDeInvestigacion;
     private Collection<Estudiante> estudiantes;
     private LocalDateTime fechaYHoraDeRecepcion;
     private Short tiempoDeEjecucionEnMeses;
@@ -101,11 +103,12 @@ public class OpcionDeGrado extends EntidadBase {
     public String toString() {
         return super.toString() + ";"
                 + getDescripcionBreve() + ";"
-                + idLineaDeInvestigacion + ";"
-                + fechaYHoraDeRecepcion + ";"
-                + tiempoDeEjecucionEnMeses + ";"
-                + idDirector + ";"
-                + idAsesor;
+                + getIdLineaDeInvestigacion() + ";"
+                + getIdSublineaDeInvestigacion() + ";"
+                + getFechaYHoraDeRecepcion() + ";"
+                + getTiempoDeEjecucionEnMeses() + ";"
+                + getIdDirector() + ";"
+                + getIdAsesor();
     }
 
     public String getIdLineaDeInvestigacion() {
@@ -114,6 +117,34 @@ public class OpcionDeGrado extends EntidadBase {
 
     public void setIdLineaDeInvestigacion(String idLineaDeInvestigacion) {
         this.idLineaDeInvestigacion = idLineaDeInvestigacion;
+    }
+
+    /**
+     * @return the idSublineaDeInvestigacion
+     */
+    public String getIdSublineaDeInvestigacion() {
+        return idSublineaDeInvestigacion;
+    }
+
+    /**
+     * @param idSublineaDeInvestigacion the idSublineaDeInvestigacion to set
+     */
+    public void setIdSublineaDeInvestigacion(String idSublineaDeInvestigacion) {
+        this.idSublineaDeInvestigacion = idSublineaDeInvestigacion;
+    }
+
+    /**
+     * @return the sublineaDeInvestigacion
+     */
+    public SublineaDeInvestigacion getSublineaDeInvestigacion() {
+        return sublineaDeInvestigacion;
+    }
+
+    /**
+     * @param sublineaDeInvestigacion the sublineaDeInvestigacion to set
+     */
+    public void setSublineaDeInvestigacion(SublineaDeInvestigacion sublineaDeInvestigacion) {
+        this.sublineaDeInvestigacion = sublineaDeInvestigacion;
     }
     
 }
