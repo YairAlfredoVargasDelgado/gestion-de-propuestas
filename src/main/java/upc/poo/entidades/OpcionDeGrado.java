@@ -103,6 +103,7 @@ public class OpcionDeGrado extends EntidadBase {
     @Override
     public String toString() {
         return super.toString() + ";"
+                + getNombre() + ";"
                 + getDescripcionBreve() + ";"
                 + getIdLineaDeInvestigacion() + ";"
                 + getIdSublineaDeInvestigacion() + ";"

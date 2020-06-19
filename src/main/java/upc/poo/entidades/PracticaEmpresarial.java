@@ -46,7 +46,8 @@ public class PracticaEmpresarial extends OpcionDeGrado {
         return super.toString() + ";"
                 + razonSocial + ";"
                 + nombreAreaODepartamento + ";"
-                + funcionesADesarrollar.stream().map(fd -> fd + "|");
+                + this.contacto.toString() + ";"
+                + String.join("|", funcionesADesarrollar);
     }
     
 }

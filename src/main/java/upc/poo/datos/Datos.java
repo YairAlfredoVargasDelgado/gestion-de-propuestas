@@ -78,10 +78,14 @@ public abstract class Datos<T extends EntidadBase> {
         return false;
     }
     
+    protected String obtenerId() {
+        return String.valueOf(1 + this.count());
+    }
+    
     public boolean registrar(T entidad) {
         try {
             BufferedWriter escritor = archivo.abrirParaEscritura(true);
-            entidad.setId(String.valueOf(1 + this.count()));
+            entidad.setId(obtenerId());
             if (existe(entidad.getId())) {
                 return false;
             }

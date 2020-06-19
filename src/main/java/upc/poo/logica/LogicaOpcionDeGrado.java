@@ -15,14 +15,20 @@ public abstract class LogicaOpcionDeGrado extends Logica<OpcionDeGrado> {
     public boolean registrar(OpcionDeGrado og) {
         LogicaEstudianteOpcionDeGrado leog = new LogicaEstudianteOpcionDeGrado();
         
+        String id = String.valueOf(this.datos.count() + 1);
+        
         for (Estudiante _e: og.getEstudiantes()) {
             EstudianteOpcionDeGrado eopg = new EstudianteOpcionDeGrado();
             
             eopg.setIdEstudiante(_e.getId());
-            eopg.setIdOpcionDeGrado(og.getId());
+            eopg.setIdOpcionDeGrado(id);
             
             if (!leog.registrar(eopg))
                 return false;
+        }
+        
+        if (!super.registrar(og)) {
+            return false;
         }
         
         return true;

@@ -1,10 +1,38 @@
 package upc.poo.presentacion;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import upc.poo.entidades.PracticaEmpresarial;
+import upc.poo.logica.LogicaPracticaEmpresarial;
+
 public class GestionPracticasDialog extends javax.swing.JDialog {
 
+    private LogicaPracticaEmpresarial lp = new LogicaPracticaEmpresarial();
+    
     public GestionPracticasDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        cargarTabla();
+    }
+    
+    private void cargarTabla() {
+        String col[] = {"Nombre","Linea de investigación",
+            "Sublínea de investigación", "Fecha y hora de recepción",
+            "Tiempo de ejecución", "Nombre asesor",
+            "Nombre director" , "Razón social"};
+        DefaultTableModel dtm = new DefaultTableModel(col, 0);
+
+        ArrayList<PracticaEmpresarial> datos = lp.getAll(true);
+
+        for (PracticaEmpresarial e: datos) {
+            Object[] o = { e.getNombre(), e.getLineaDeInvestigacion().getNombre(),
+                    e.getSublineaDeInvestigacion().getNombre(), e.getFechaYHoraDeRecepcion(),
+                    e.getTiempoDeEjecucionEnMeses(), e.getAsesor().getNombre().toReadableString(),
+                    e.getDirector().getNombre().toReadableString(), e.getRazonSocial() };
+            dtm.addRow(o);
+        }
+
+        this.jTable1.setModel(dtm);
     }
     
     @SuppressWarnings("unchecked")
@@ -60,7 +88,7 @@ public class GestionPracticasDialog extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton3)

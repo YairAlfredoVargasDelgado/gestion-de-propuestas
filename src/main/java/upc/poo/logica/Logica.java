@@ -11,7 +11,7 @@ public class Logica<T extends EntidadBase> {
         this.datos = datos;
     }
     
-    private final Datos datos;
+    protected final Datos datos;
     
     public ArrayList getAll(boolean lazy) {
         return datos.obtenerTodas(lazy);

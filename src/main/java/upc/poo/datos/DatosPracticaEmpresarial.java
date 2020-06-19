@@ -2,6 +2,7 @@ package upc.poo.datos;
 
 import java.util.Arrays;
 import upc.poo.entidades.Contacto;
+import upc.poo.entidades.OpcionDeGrado;
 import upc.poo.entidades.PracticaEmpresarial;
 
 public class DatosPracticaEmpresarial extends DatosOpcionDeGrado {
@@ -12,20 +13,33 @@ public class DatosPracticaEmpresarial extends DatosOpcionDeGrado {
     
     @Override
     public PracticaEmpresarial mapear(String dato, boolean lazy) {
-        PracticaEmpresarial pe = (PracticaEmpresarial) super.mapear(dato, lazy);
+        OpcionDeGrado og = super.mapear(dato, lazy);
+        
+        PracticaEmpresarial pe = new PracticaEmpresarial();
+        
+        pe.setIdAsesor(og.getIdAsesor());
+        pe.setAsesor(og.getAsesor());
+        pe.setDescripcionBreve(og.getDescripcionBreve());
+        pe.setIdDirector(dato);
+        pe.setDirector(og.getDirector());
+        pe.setEstudiantes(og.getEstudiantes());
+        pe.setFechaYHoraDeRecepcion(og.getFechaYHoraDeRecepcion());
+        pe.setIdLineaDeInvestigacion(og.getIdLineaDeInvestigacion());
+        pe.setLineaDeInvestigacion(og.getLineaDeInvestigacion());
+        pe.setIdSublineaDeInvestigacion(og.getIdSublineaDeInvestigacion());
+        pe.setSublineaDeInvestigacion(og.getSublineaDeInvestigacion());
         
         String[] d = dato.split(";");
         
         pe.setRazonSocial(d[7]);
+        pe.setNombreAreaODepartamento(d[8]);
         
         Contacto c = new Contacto();
-        c.setTelefonoFijo(d[8]);
-        c.setTelefonoCelular(d[9]);
-        c.setDireccion(d[10]);
-        c.setCorreoElectronico(d[11]);
+        c.setTelefonoFijo(d[9]);
+        c.setTelefonoCelular(d[10]);
+        c.setDireccion(d[11]);
+        c.setCorreoElectronico(d[12]);
         pe.setContacto(c);
-        
-        pe.setNombreAreaODepartamento(d[12]);
         
         String[] fad = d[13].split("|");
         

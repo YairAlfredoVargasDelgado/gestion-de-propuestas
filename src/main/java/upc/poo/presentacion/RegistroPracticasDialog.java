@@ -1,8 +1,12 @@
 package upc.poo.presentacion;
 
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import upc.poo.entidades.Contacto;
 import upc.poo.entidades.OpcionDeGrado;
 import upc.poo.entidades.PracticaEmpresarial;
 import upc.poo.logica.LogicaPracticaEmpresarial;
@@ -21,24 +25,17 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
     }
     
     private boolean validar() {
-        if (jTextField1.getText().isEmpty()) {
-            return false;
-        }
-        
-        if (jTextField2.getText().isEmpty()) {
-            return false;
-        }
-        
-        if (jTextField3.getText().isEmpty()) {
-            return false;
-        }
-        
-        if (jTextField4.getText().isEmpty()) {
-            return false;
-        }
-        
-        if (jTable1.getModel().getRowCount() == 0) {
-            return false;
+        for (Component c: this.getComponents()) {
+            if (c instanceof JTextField) {
+                if (((JTextField) c).getText().isEmpty())
+                    return false;
+            }
+            
+            if (c instanceof JTable) {
+                if (((JTable) c).getRowCount() == 0) {
+                    return false;
+                }
+            }
         }
         
         return true;
@@ -69,6 +66,12 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         jButton2.setText("Continuar");
 
@@ -78,7 +81,7 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
 
         jLabel2.setText("Razón social");
 
-        jLabel3.setText("Contacto");
+        jLabel3.setText("Correo electrónico");
 
         jLabel4.setText("Nombre área");
 
@@ -118,6 +121,12 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
             }
         });
 
+        jLabel6.setText("Número teléfono");
+
+        jLabel7.setText("Celular");
+
+        jLabel8.setText("Dirección");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,36 +135,41 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel7))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 5, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton1))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 262, Short.MAX_VALUE)
+                                .addComponent(jButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel2)
-                                            .addComponent(jLabel3))
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel8))
                                         .addGap(50, 50, 50)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                                            .addComponent(jTextField1)))
+                                            .addComponent(jTextField1)
+                                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                                            .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel5)
                                             .addComponent(jLabel4))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                                            .addComponent(jTextField3))))
+                                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                                            .addComponent(jTextField4))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton4)))
                         .addContainerGap())))
@@ -173,6 +187,18 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -225,11 +251,22 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
         pf.setIdSublineaDeInvestigacion(og.getIdSublineaDeInvestigacion());
         pf.setSublineaDeInvestigacion(og.getSublineaDeInvestigacion());
         
+        pf.setNombre(og.getNombre());
+        pf.setEstudiantes(og.getEstudiantes());
+        
+        Contacto c = new Contacto();
+        c.setCorreoElectronico(this.jTextField2.getText());
+        c.setTelefonoFijo(this.jTextField5.getText());
+        c.setTelefonoCelular(this.jTextField6.getText());
+        c.setDireccion(this.jTextField7.getText());
+        pf.setContacto(c);
+        
         pf.setFechaYHoraDeRecepcion(og.getFechaYHoraDeRecepcion());
         pf.setDescripcionBreve(og.getDescripcionBreve());
         pf.setNombreAreaODepartamento(this.jTextField3.getText());
         pf.setRazonSocial(this.jTextField1.getText());
         pf.setFuncionesADesarrollar(obtenerFunciones());
+        
         pf.setTiempoDeEjecucionEnMeses(og.getTiempoDeEjecucionEnMeses());
         
         if (!log.registrar(pf)) {
@@ -259,11 +296,17 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }
