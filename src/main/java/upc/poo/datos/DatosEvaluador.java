@@ -3,30 +3,29 @@ package upc.poo.datos;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import upc.poo.entidades.Contacto;
-import upc.poo.entidades.Director;
 import upc.poo.entidades.Evaluador;
 import upc.poo.entidades.Identificacion;
-import upc.poo.entidades.LineaDeInvestigacion;
 import upc.poo.entidades.NombreCompleto;
 import upc.poo.entidades.OpcionDeGrado;
+import upc.poo.entidades.Usuario;
 import upc.poo.entidades.enums.Genero;
 import upc.poo.entidades.enums.TipoDeIdentificacion;
-import upc.poo.logica.LogicaLineaDeInvestigacion;
+import upc.poo.logica.LogicaUsuarios;
 
-public class DatosDirector extends DatosPersona {
-    
-    public DatosDirector() {
-        super("director.txt");
+public class DatosEvaluador extends DatosPersona {
+
+    public DatosEvaluador() {
+        super("asesor.txt");
     }
     
     @Override
-    public Director mapear(String dato, boolean lazy) {
+    public Evaluador mapear(String dato, boolean lazy) {
         String[] d = dato.split(";");
         
         NombreCompleto nc = new NombreCompleto();
         Identificacion id = new Identificacion();
         Contacto c = new Contacto();
-        Director p = new Director();
+        Evaluador p = new Evaluador();
         
         p.setId(d[0]);
         
@@ -50,25 +49,23 @@ public class DatosDirector extends DatosPersona {
         p.setIdentificacion(id);
         p.setContacto(c);
         
-        String[] _d = dato.split(";");
-        
-        LineaDeInvestigacion li = new LineaDeInvestigacion();
+        Usuario u = new Usuario();
         try {
-            li = new LogicaLineaDeInvestigacion().get(_li -> _li.getId().equals(_d[13])).get(0);
-            p.setIdLineaDeInvestigacion(li.getId());
+            u = new LogicaUsuarios().get(_u -> _u.getId().equals(d[13])).get(0);
+            p.setIdUsuario(u.getId());
         } catch (Exception e) {
             
         }
-        p.setLineaDeInvestigacion(li);
+        p.setUsuario(u);
         
         if (!lazy) {
             ArrayList<OpcionDeGrado> og = new ArrayList<>();
             
-            for (OpcionDeGrado _og: new DatosProyectoDeInvestigacionAplicada().obtener(pia -> pia.getIdDirector().equals(p.getId()), true)){
+            for (OpcionDeGrado _og: new DatosProyectoDeInvestigacionAplicada().obtener(pia -> pia.getIdAsesor().equals(p.getId()), true)){
                 og.add(_og);
             }
             
-            for (OpcionDeGrado _og: new DatosPracticaEmpresarial().obtener(pia -> pia.getIdDirector().equals(p.getId()), true)){
+            for (OpcionDeGrado _og: new DatosPracticaEmpresarial().obtener(pia -> pia.getIdAsesor().equals(p.getId()), true)){
                 og.add(_og);
             }
             

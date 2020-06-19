@@ -17,7 +17,7 @@ public class OpcionDeGrado extends EntidadBase {
     private String idDirector;
     private Director director;
     private String idAsesor;
-    private Asesor asesor;
+    private Evaluador asesor;
     private String estado = "0";
 
     public String getNombre() {
@@ -76,11 +76,11 @@ public class OpcionDeGrado extends EntidadBase {
         this.director = director;
     }
 
-    public Asesor getAsesor() {
+    public Evaluador getAsesor() {
         return asesor;
     }
 
-    public void setAsesor(Asesor asesor) {
+    public void setAsesor(Evaluador asesor) {
         this.asesor = asesor;
     }
 

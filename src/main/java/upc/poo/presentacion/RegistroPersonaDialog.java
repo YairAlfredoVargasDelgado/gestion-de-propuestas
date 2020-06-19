@@ -2,7 +2,7 @@ package upc.poo.presentacion;
 
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
-import upc.poo.entidades.Asesor;
+import upc.poo.entidades.Evaluador;
 import upc.poo.entidades.Contacto;
 import upc.poo.entidades.Estudiante;
 import upc.poo.entidades.Identificacion;
@@ -10,7 +10,7 @@ import upc.poo.entidades.NombreCompleto;
 import upc.poo.entidades.Persona;
 import upc.poo.entidades.enums.Genero;
 import upc.poo.entidades.enums.TipoDeIdentificacion;
-import upc.poo.logica.LogicaAsesor;
+import upc.poo.logica.LogicaEvaluador;
 import upc.poo.logica.LogicaEstudiante;
 
 public class RegistroPersonaDialog extends javax.swing.JDialog {
@@ -340,8 +340,8 @@ public class RegistroPersonaDialog extends javax.swing.JDialog {
                     new RegistroDirectorDialog(null, true, p).setVisible(true);
                     break;
                 default:
-                    LogicaAsesor la = new LogicaAsesor();
-                    Asesor a = new Asesor();
+                    LogicaEvaluador la = new LogicaEvaluador();
+                    Evaluador a = new Evaluador();
                     
                     a.setContacto(p.getContacto());
                     a.setFechaNacimiento(p.getFechaNacimiento());

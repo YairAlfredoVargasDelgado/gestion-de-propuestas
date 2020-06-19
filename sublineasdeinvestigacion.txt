@@ -1,1 +1,2 @@
 1;Minería de datos;Se encargar del análisis de grandes cantidades de datos.;1
+2;Desarrollo IA;Es referente a la inteligencia artificial;2

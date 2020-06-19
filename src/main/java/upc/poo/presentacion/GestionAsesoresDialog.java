@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-import upc.poo.entidades.Asesor;
+import upc.poo.entidades.Evaluador;
 import upc.poo.logica.Logica;
-import upc.poo.logica.LogicaAsesor;
+import upc.poo.logica.LogicaEvaluador;
 
 public class GestionAsesoresDialog extends javax.swing.JDialog {
 
-    private Logica l = new LogicaAsesor();
+    private Logica l = new LogicaEvaluador();
 
     private void cargarTabla() {
 
@@ -23,9 +23,9 @@ public class GestionAsesoresDialog extends javax.swing.JDialog {
             "Contacto"};
         DefaultTableModel dtm = new DefaultTableModel(col, 0);
 
-        ArrayList<Asesor> datos = l.getAll(true);
+        ArrayList<Evaluador> datos = l.getAll(true);
 
-        for (Asesor e: datos) {
+        for (Evaluador e: datos) {
             Object[] o = { e.getNombre().getPrimerNombre(), e.getNombre().getSegundoNombre(),
                     e.getNombre().getPrimerApellido(), e.getNombre().getSegundoApellido(),
                     e.getIdentificacion().getTipo(), e.getIdentificacion().getNumero(),

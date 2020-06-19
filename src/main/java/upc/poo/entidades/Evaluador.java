@@ -2,7 +2,7 @@ package upc.poo.entidades;
 
 import java.util.Collection;
 
-public class Asesor extends Profesor {
+public class Evaluador extends Profesor {
     
     private Collection<OpcionDeGrado> opcionesDeGrado;
 

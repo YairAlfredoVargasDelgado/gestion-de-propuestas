@@ -24,14 +24,11 @@ public class RegistroDirectorDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.p = persona;
+        cargarComboBox();
     }
     
     private boolean validar() {
         if (String.valueOf(jComboBox1.getSelectedItem()).isEmpty()) {
-            return false;
-        }
-        
-        if (this.jComboBox1.getSelectedIndex() == 0) {
             return false;
         }
         return true;
@@ -47,7 +44,6 @@ public class RegistroDirectorDialog extends javax.swing.JDialog {
         
         ArrayList<String> nombres = new ArrayList<>();
         
-        nombres.add("Seleccione una linea de investigacion");
         li.forEach(_li -> nombres.add(_li.getNombre()));
         
         this.jComboBox1.setModel(new DefaultComboBoxModel<>(nombres.toArray(new String[nombres.size()])));
@@ -145,7 +141,7 @@ public class RegistroDirectorDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        lineaDeInvestigacionSeleccionada = lli.get(_li -> _li.getNombre().equals(String.valueOf(jComboBox1.getSelectedItem()).isEmpty())).get(0);
+        lineaDeInvestigacionSeleccionada = lli.get(_li -> _li.getNombre().equals(String.valueOf(jComboBox1.getSelectedItem()))).get(0);
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

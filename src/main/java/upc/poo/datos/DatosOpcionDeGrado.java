@@ -1,7 +1,7 @@
 package upc.poo.datos;
 
 import java.time.LocalDateTime;
-import upc.poo.entidades.Asesor;
+import upc.poo.entidades.Evaluador;
 import upc.poo.entidades.Director;
 import upc.poo.entidades.OpcionDeGrado;
 
@@ -26,7 +26,7 @@ public class DatosOpcionDeGrado extends Datos<OpcionDeGrado> {
         og.setIdDirector(d[6]);
         og.setDirector((Director)new DatosDirector().obtener(_d -> _d.getId().equals(og.getIdDirector()), true).get(0));
         og.setIdAsesor(d[7]);
-        og.setAsesor((Asesor)new DatosAsesor().obtener(a -> a.getId().equals(og.getIdAsesor()), lazy).get(0));
+        og.setAsesor((Evaluador)new DatosEvaluador().obtener(a -> a.getId().equals(og.getIdAsesor()), lazy).get(0));
         og.setEstado(d[8]);
         
         return og;

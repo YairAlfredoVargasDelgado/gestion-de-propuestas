@@ -17,6 +17,7 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.og = og;
+        initTabla();
     }
     
     private boolean validar() {
@@ -41,6 +42,12 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
         }
         
         return true;
+    }
+    
+    private void initTabla() {
+        String col[] = {"Función"};
+        DefaultTableModel dtm = new DefaultTableModel(col, 0);
+        this.jTable1.setModel(dtm);
     }
 
     @SuppressWarnings("unchecked")

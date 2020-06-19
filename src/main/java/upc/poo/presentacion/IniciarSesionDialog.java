@@ -9,6 +9,8 @@ public class IniciarSesionDialog extends javax.swing.JDialog {
 
     private LogicaUsuarios lu = new LogicaUsuarios();
     
+    private Usuario usuarioSeleccionado;
+    
     private String rol;
     
     public IniciarSesionDialog(java.awt.Frame parent, boolean modal) {
@@ -34,6 +36,7 @@ public class IniciarSesionDialog extends javax.swing.JDialog {
             return false;
         }
         
+        this.usuarioSeleccionado = u;
         this.rol = u.getRol();
         return true;
     }
@@ -115,12 +118,15 @@ public class IniciarSesionDialog extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (validarCredenciales()) {
             this.setVisible(false);
-            if (this.rol.equals("A"))
+            if (this.rol.equals("A")) {
                 new AdministradorDialog(null, true).setVisible(true);
-            if (this.rol.equals("E"))
-                new EvaluadorDialog(null, true).setVisible(true);
-            if (this.rol.equals("C"))
+            }
+            if (this.rol.equals("E")) {
+                new EvaluadorDialog(null, true, this.usuarioSeleccionado).setVisible(true);
+            }
+            if (this.rol.equals("C")) {
                 new ComiteDialog(null, true).setVisible(true);
+            }
             this.dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed

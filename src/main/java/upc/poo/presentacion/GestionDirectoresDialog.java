@@ -13,9 +13,6 @@ public class GestionDirectoresDialog extends javax.swing.JDialog {
     private Logica l = new LogicaDirector();
 
     private void cargarTabla() {
-
-        TableCellRenderer tableRenderer = this.jTable1.getDefaultRenderer(JButton.class);
-
         String col[] = {"Primer nombre", "Segundo nombre",
             "Primer apellido", "Segundo apellido",
             "Tipo de identificación", "Número de identificación",

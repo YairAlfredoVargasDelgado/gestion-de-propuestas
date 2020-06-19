@@ -46,5 +46,9 @@ public class NombreCompleto {
                 + primerApellido + ";"
                 + segundoApellido;
     }
+
+    public String toReadableString() {
+        return primerNombre + " " + segundoNombre + " " + primerApellido + " " + segundoApellido;
+    }
     
 }

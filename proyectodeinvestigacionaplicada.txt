@@ -1,0 +1,1 @@
+1;Practica 1;1;1;2020-06-19T08:28:00.274143600;null;1;1;0;Desarrollar;Desarrollar;java.util.stream.ReferencePipeline$3@1834a1b7

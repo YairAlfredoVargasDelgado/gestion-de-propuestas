@@ -1,1 +1,2 @@
 1;Gestión de datos;Referente a la gestión de datos.
+2;Ingeniería se software;Referente a la ingeniería de software

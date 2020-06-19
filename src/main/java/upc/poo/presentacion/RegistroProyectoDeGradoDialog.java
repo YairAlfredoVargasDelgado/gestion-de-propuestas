@@ -4,13 +4,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import upc.poo.entidades.Asesor;
+import upc.poo.entidades.Evaluador;
 import upc.poo.entidades.Director;
 import upc.poo.entidades.Estudiante;
 import upc.poo.entidades.LineaDeInvestigacion;
 import upc.poo.entidades.OpcionDeGrado;
 import upc.poo.entidades.SublineaDeInvestigacion;
-import upc.poo.logica.LogicaAsesor;
+import upc.poo.logica.LogicaEvaluador;
 import upc.poo.logica.LogicaDirector;
 import upc.poo.logica.LogicaEstudiante;
 import upc.poo.logica.LogicaLineaDeInvestigacion;
@@ -22,13 +22,13 @@ public class RegistroProyectoDeGradoDialog extends javax.swing.JDialog {
     private final LogicaSublineaDeInvestigacion lsli = new LogicaSublineaDeInvestigacion();
     private final LogicaEstudiante le = new LogicaEstudiante();
     private final LogicaDirector ld = new LogicaDirector();
-    private final LogicaAsesor la = new LogicaAsesor();
+    private final LogicaEvaluador la = new LogicaEvaluador();
     
     private LineaDeInvestigacion lineaDeInvestigacionSeleccionada;
     private SublineaDeInvestigacion sublineaDeInvestigacionSeleccionada;
     private final ArrayList<Estudiante> estudiantesSeleccionados = new ArrayList<>();
     private Director directorSeleccionado;
-    private Asesor asesorSeleccionado;
+    private Evaluador asesorSeleccionado;
     private final int tipo;
     
     private ArrayList<LineaDeInvestigacion> li;
@@ -476,7 +476,7 @@ public class RegistroProyectoDeGradoDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        ArrayList<Asesor> asrs = la.get((Asesor _a) -> _a.getIdentificacion().getNumero().equals(this.jTextField5.getText()));
+        ArrayList<Evaluador> asrs = la.get((Evaluador _a) -> _a.getIdentificacion().getNumero().equals(this.jTextField5.getText()));
         if (asrs.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Este asesor no está registrado");
             return;
