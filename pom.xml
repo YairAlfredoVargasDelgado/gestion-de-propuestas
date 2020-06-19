@@ -25,6 +25,15 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.github.lgooddatepicker/LGoodDatePicker -->
+        <dependency>
+            <groupId>com.github.lgooddatepicker</groupId>
+            <artifactId>LGoodDatePicker</artifactId>
+            <version>10.3.1</version>
+            <classifier>executable-demo</classifier>
+        </dependency>
+
     </dependencies>
 
     <build>

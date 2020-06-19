@@ -27,6 +27,7 @@ public class DatosOpcionDeGrado extends Datos<OpcionDeGrado> {
         og.setDirector((Director)new DatosDirector().obtener(_d -> _d.getId().equals(og.getIdDirector()), true).get(0));
         og.setIdAsesor(d[7]);
         og.setAsesor((Asesor)new DatosAsesor().obtener(a -> a.getId().equals(og.getIdAsesor()), lazy).get(0));
+        og.setEstado(d[8]);
         
         return og;
     }

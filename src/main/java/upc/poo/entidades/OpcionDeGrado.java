@@ -18,6 +18,7 @@ public class OpcionDeGrado extends EntidadBase {
     private Director director;
     private String idAsesor;
     private Asesor asesor;
+    private String estado = "0";
 
     public String getNombre() {
         return nombre;
@@ -108,7 +109,8 @@ public class OpcionDeGrado extends EntidadBase {
                 + getFechaYHoraDeRecepcion() + ";"
                 + getTiempoDeEjecucionEnMeses() + ";"
                 + getIdDirector() + ";"
-                + getIdAsesor();
+                + getIdAsesor() + ";"
+                + getEstado();
     }
 
     public String getIdLineaDeInvestigacion() {
@@ -145,6 +147,20 @@ public class OpcionDeGrado extends EntidadBase {
      */
     public void setSublineaDeInvestigacion(SublineaDeInvestigacion sublineaDeInvestigacion) {
         this.sublineaDeInvestigacion = sublineaDeInvestigacion;
+    }
+
+    /**
+     * @return the estado
+     */
+    public String getEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
     
 }

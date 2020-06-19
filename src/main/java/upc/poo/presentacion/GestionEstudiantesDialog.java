@@ -1,9 +1,7 @@
 package upc.poo.presentacion;
 
 import java.util.ArrayList;
-import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 import upc.poo.entidades.Estudiante;
 import upc.poo.logica.Logica;
 import upc.poo.logica.LogicaEstudiante;
@@ -13,8 +11,6 @@ public class GestionEstudiantesDialog extends javax.swing.JDialog {
     private Logica l = new LogicaEstudiante();
 
     private void cargarTabla() {
-
-        TableCellRenderer tableRenderer = this.jTable1.getDefaultRenderer(JButton.class);
 
         String col[] = {"Primer nombre", "Segundo nombre",
             "Primer apellido", "Segundo apellido",
