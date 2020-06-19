@@ -85,7 +85,7 @@ public abstract class Datos<T extends EntidadBase> {
     public boolean registrar(T entidad) {
         try {
             BufferedWriter escritor = archivo.abrirParaEscritura(true);
-            entidad.setId(obtenerId());
+            entidad.setId(String.valueOf(1 + this.count()));
             if (existe(entidad.getId())) {
                 return false;
             }

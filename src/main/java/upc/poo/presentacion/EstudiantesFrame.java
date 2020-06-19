@@ -1,7 +1,10 @@
 package upc.poo.presentacion;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import upc.poo.entidades.Estudiante;
+import upc.poo.entidades.OpcionDeGrado;
 import upc.poo.entidades.PracticaEmpresarial;
 import upc.poo.entidades.ProyectoDeInvestigacion;
 import upc.poo.logica.LogicaEstudiante;
@@ -16,6 +19,7 @@ public class EstudiantesFrame extends javax.swing.JFrame {
     
     public EstudiantesFrame() {
         initComponents();
+        initTablas();
     }
     
     private void cargarPracticasEmpresariales() {
@@ -35,6 +39,16 @@ public class EstudiantesFrame extends javax.swing.JFrame {
         }
 
         this.jTable2.setModel(dtm);
+    }
+    
+    private void initTablas() {
+        String col[] = {"Id", "Nombre", "Linea de investigacion", "Sublinea de investigacion", "Estado"};
+        DefaultTableModel dtm = new DefaultTableModel(col, 0);
+        this.jTable1.setModel(dtm);
+        
+        String _col[] = {"Id", "Nombre", "Linea de investigacion", "Sublinea de investigacion", "Estado"};
+        DefaultTableModel _dtm = new DefaultTableModel(_col, 0);
+        this.jTable2.setModel(_dtm);
     }
     
     private void cargarProyectosDeInvestigacion() {
@@ -146,22 +160,22 @@ public class EstudiantesFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 97, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton2)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -189,8 +203,39 @@ public class EstudiantesFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        cargarPracticasEmpresariales();
-        cargarProyectosDeInvestigacion();
+        ArrayList<Estudiante> es = le.get(_e -> _e.getIdentificacion().getNumero().equals(this.jTextField1.getText()), false);
+        
+        if (es.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Esta persona no está registrada");
+            return;
+        }
+        
+        Estudiante e = es.get(0);
+        
+        System.out.println(e.getNombre().toReadableString());
+        
+        String _estado = "";
+        for (OpcionDeGrado og: e.getOpcionesDeGrado()) {
+            String estado = og.getEstado();
+            
+            switch (estado) {
+                case "0":
+                    _estado = "No revisado";
+                    break;
+                case "1":
+                    _estado = "Aprobado";
+                    break;
+                case "2":
+                    _estado = "Rechazado";
+                    break;
+            }
+            
+            if (og instanceof PracticaEmpresarial) {
+                ((DefaultTableModel)this.jTable2.getModel()).addRow(new Object[]{ og.getId(), og.getNombre(), og.getLineaDeInvestigacion().getNombre(), og.getSublineaDeInvestigacion().getNombre(), _estado });
+            } else {
+                ((DefaultTableModel)this.jTable1.getModel()).addRow(new Object[]{ og.getId(), og.getNombre(), og.getLineaDeInvestigacion().getNombre(), og.getSublineaDeInvestigacion().getNombre(), _estado });
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

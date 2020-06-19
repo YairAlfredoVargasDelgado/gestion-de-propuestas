@@ -17,6 +17,7 @@ public class DatosEstudianteOpcionDeGrado extends Datos<EstudianteOpcionDeGrado>
         eog.setId(d[0]);
         eog.setIdEstudiante(d[1]);
         eog.setIdOpcionDeGrado(d[2]);
+        eog.setTipoOpcionDeGrado(d[3]);
         
         return eog;
     }

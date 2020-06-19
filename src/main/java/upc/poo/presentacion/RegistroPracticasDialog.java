@@ -239,6 +239,8 @@ public class RegistroPracticasDialog extends javax.swing.JDialog {
         
         PracticaEmpresarial pf = new PracticaEmpresarial();
         
+        pf.setTipo("PE");
+        
         pf.setIdAsesor(og.getIdAsesor());
         pf.setAsesor(og.getAsesor());
         

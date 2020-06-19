@@ -61,7 +61,7 @@ public class DatosEvaluador extends DatosPersona {
         if (!lazy) {
             ArrayList<OpcionDeGrado> og = new ArrayList<>();
             
-            for (OpcionDeGrado _og: new DatosProyectoDeInvestigacionAplicada().obtener(pia -> pia.getIdAsesor().equals(p.getId()), true)){
+            for (OpcionDeGrado _og: new DatosProyectoDeInvestigacion().obtener(pia -> pia.getIdAsesor().equals(p.getId()), true)){
                 og.add(_og);
             }
             

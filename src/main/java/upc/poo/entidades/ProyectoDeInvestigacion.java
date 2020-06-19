@@ -46,7 +46,8 @@ public class ProyectoDeInvestigacion extends OpcionDeGrado {
         return super.toString() + ";"
                 + objetivoGeneral + ";"
                 + resumenDelPlanteamientoDelProblema + ";"
-                + objetivosEspecificos.stream().map(oe -> oe + "|");
+                + this.getJustificacion() + ";"
+                + String.join("|", objetivosEspecificos);
     }
     
 }

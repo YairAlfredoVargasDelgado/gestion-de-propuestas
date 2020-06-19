@@ -1,31 +1,30 @@
 package upc.poo.datos;
 
 import java.util.Arrays;
-import upc.poo.entidades.Contacto;
 import upc.poo.entidades.OpcionDeGrado;
-import upc.poo.entidades.PracticaEmpresarial;
+import upc.poo.entidades.ProyectoDeInvestigacion;
 
-public class DatosPracticaEmpresarial extends DatosOpcionDeGrado {
+public class DatosProyectoDeInvestigacion extends DatosOpcionDeGrado {
 
-    public DatosPracticaEmpresarial() {
-       super("practicaempresarial.txt");
+    public DatosProyectoDeInvestigacion() {
+        super("proyectodeinvestigacionaplicada.txt");
     }
-    
+
     @Override
-    public PracticaEmpresarial mapear(String dato, boolean lazy) {
+    public ProyectoDeInvestigacion mapear(String dato, boolean lazy) {
         OpcionDeGrado og = super.mapear(dato, lazy);
         
-        PracticaEmpresarial pe = new PracticaEmpresarial();
+        ProyectoDeInvestigacion pe = new ProyectoDeInvestigacion();
         
         pe.setId(og.getId());
-        pe.setNombre(og.getNombre());
-        pe.setTiempoDeEjecucionEnMeses(og.getTiempoDeEjecucionEnMeses());
         pe.setIdAsesor(og.getIdAsesor());
+        pe.setNombre(og.getNombre());
         pe.setAsesor(og.getAsesor());
         pe.setDescripcionBreve(og.getDescripcionBreve());
         pe.setIdDirector(dato);
         pe.setDirector(og.getDirector());
         pe.setEstudiantes(og.getEstudiantes());
+        pe.setTiempoDeEjecucionEnMeses(og.getTiempoDeEjecucionEnMeses());
         pe.setFechaYHoraDeRecepcion(og.getFechaYHoraDeRecepcion());
         pe.setIdLineaDeInvestigacion(og.getIdLineaDeInvestigacion());
         pe.setLineaDeInvestigacion(og.getLineaDeInvestigacion());
@@ -34,19 +33,12 @@ public class DatosPracticaEmpresarial extends DatosOpcionDeGrado {
         
         String[] d = dato.split(";");
         
-        pe.setRazonSocial(d[11]);
-        pe.setNombreAreaODepartamento(d[12]);
+        pe.setObjetivoGeneral(d[11]);
+        pe.setResumenDelPlanteamientoDelProblema(d[12]);
+        pe.setJustificacion(d[13]);
         
-        Contacto c = new Contacto();
-        c.setTelefonoFijo(d[13]);
-        c.setTelefonoCelular(d[14]);
-        c.setDireccion(d[15]);
-        c.setCorreoElectronico(d[16]);
-        pe.setContacto(c);
-        
-        String[] fad = d[17].split("|");
-        
-        pe.setFuncionesADesarrollar(Arrays.asList(fad));
+        String[] fad = d[14].split("|");
+        pe.setObjetivosEspecificos(Arrays.asList(fad));
         
         return pe;
     }

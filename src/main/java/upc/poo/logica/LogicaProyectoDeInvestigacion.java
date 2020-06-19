@@ -1,12 +1,11 @@
 package upc.poo.logica;
 
-import upc.poo.datos.DatosProyectoDeInvestigacionAplicada;
-import upc.poo.entidades.ProyectoDeInvestigacion;
+import upc.poo.datos.DatosProyectoDeInvestigacion;
 
-public class LogicaProyectoDeInvestigacion extends Logica<ProyectoDeInvestigacion> {
+public class LogicaProyectoDeInvestigacion extends LogicaProyectoDeGrado {
 
     public LogicaProyectoDeInvestigacion() {
-        super(new DatosProyectoDeInvestigacionAplicada());
+        super(new DatosProyectoDeInvestigacion());
     }
 
 }

@@ -4,6 +4,7 @@ public class EstudianteOpcionDeGrado extends EntidadBase {
 
     private String idEstudiante;
     private String idOpcionDeGrado;
+    private String tipoOpcionDeGrado;
 
     public String getIdEstudiante() {
         return idEstudiante;
@@ -24,7 +25,22 @@ public class EstudianteOpcionDeGrado extends EntidadBase {
     @Override
     public String toString() {
         return super.toString() + ";"
-                + idEstudiante + ";"
-                + idOpcionDeGrado;
+                + getIdEstudiante() + ";"
+                + getIdOpcionDeGrado() + ";"
+                + getTipoOpcionDeGrado();
+    }
+
+    /**
+     * @return the tipoOpcionDeGrado
+     */
+    public String getTipoOpcionDeGrado() {
+        return tipoOpcionDeGrado;
+    }
+
+    /**
+     * @param tipoOpcionDeGrado the tipoOpcionDeGrado to set
+     */
+    public void setTipoOpcionDeGrado(String tipoOpcionDeGrado) {
+        this.tipoOpcionDeGrado = tipoOpcionDeGrado;
     }
 }

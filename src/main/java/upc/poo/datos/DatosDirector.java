@@ -64,7 +64,7 @@ public class DatosDirector extends DatosPersona {
         if (!lazy) {
             ArrayList<OpcionDeGrado> og = new ArrayList<>();
             
-            for (OpcionDeGrado _og: new DatosProyectoDeInvestigacionAplicada().obtener(pia -> pia.getIdDirector().equals(p.getId()), true)){
+            for (OpcionDeGrado _og: new DatosProyectoDeInvestigacion().obtener(pia -> pia.getIdDirector().equals(p.getId()), true)){
                 og.add(_og);
             }
             

@@ -5,9 +5,9 @@ import upc.poo.entidades.Estudiante;
 import upc.poo.entidades.EstudianteOpcionDeGrado;
 import upc.poo.entidades.OpcionDeGrado;
 
-public abstract class LogicaOpcionDeGrado extends Logica<OpcionDeGrado> {
+public abstract class LogicaProyectoDeGrado extends Logica<OpcionDeGrado> {
 
-    public LogicaOpcionDeGrado(Datos datos) {
+    public LogicaProyectoDeGrado(Datos datos) {
         super(datos);
     }
     
@@ -22,6 +22,7 @@ public abstract class LogicaOpcionDeGrado extends Logica<OpcionDeGrado> {
             
             eopg.setIdEstudiante(_e.getId());
             eopg.setIdOpcionDeGrado(id);
+            eopg.setTipoOpcionDeGrado(og.getTipo());
             
             if (!leog.registrar(eopg))
                 return false;

@@ -27,7 +27,7 @@ public class DatosEstudiante extends DatosPersona {
         NombreCompleto nc = new NombreCompleto();
         Identificacion id = new Identificacion();
         Contacto c = new Contacto();
-        Persona p = new Estudiante();
+        Estudiante p = new Estudiante();
         
         p.setId(d[0]);
         
@@ -52,12 +52,28 @@ public class DatosEstudiante extends DatosPersona {
         p.setContacto(c);
         
         if (!lazy) {
+            System.out.println("Hola mundo!!!!");
             ArrayList<OpcionDeGrado> og = new ArrayList<>();
             
-            ArrayList<EstudianteOpcionDeGrado> eog = new ArrayList<>();
+            ArrayList<EstudianteOpcionDeGrado> eog = new DatosEstudianteOpcionDeGrado().obtenerTodas(true);
+            
+            DatosPracticaEmpresarial dpe = new DatosPracticaEmpresarial();
+            DatosProyectoDeInvestigacion dpi = new DatosProyectoDeInvestigacion();
+            
+            for (EstudianteOpcionDeGrado eo: eog) {
+                if (eo.getIdEstudiante().equals(p.getId())) {
+                    if (eo.getTipoOpcionDeGrado().equals("PE")) {
+                        og.add(dpe.obtener(eo.getIdOpcionDeGrado(), true));
+                    } else {
+                        og.add(dpi.obtener(eo.getIdOpcionDeGrado(), true));
+                    }
+                }
+            }
+            
+            p.setOpcionesDeGrado(og);
         }
         
-        return (Estudiante)p;
+        return p;
     }
     
 }

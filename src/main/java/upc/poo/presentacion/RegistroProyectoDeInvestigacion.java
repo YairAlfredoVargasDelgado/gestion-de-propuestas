@@ -1,7 +1,11 @@
 package upc.poo.presentacion;
 
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import upc.poo.entidades.OpcionDeGrado;
 import upc.poo.entidades.ProyectoDeInvestigacion;
@@ -25,20 +29,24 @@ public class RegistroProyectoDeInvestigacion extends javax.swing.JDialog {
     }
     
     private boolean validar() {
-        if (this.jTextField1.getText().isEmpty()) {
-            return false;
-        }
-        
-        if (this.jTextArea1.getText().isEmpty()) {
-            return false;
-        }
-        
-        if (this.jTextArea2.getText().isEmpty()) {
-            return false;
-        }
-        
-        if (this.jTextField3.getText().isEmpty()) {
-            return false;
+        for (Component c: this.getComponents()) {
+            if (c instanceof JTextField) {
+                if (((JTextField) c).getText().isEmpty()) {
+                    return false;
+                }
+            }
+            
+            if (c instanceof JTextArea) {
+                if (((JTextArea) c).getText().isEmpty()) {
+                    return false;
+                }
+            }
+            
+            if (c instanceof JTable) {
+                if (((JTable) c).getRowCount() == 0) {
+                    return false;
+                }
+            }
         }
         
         return true;
@@ -213,8 +221,11 @@ public class RegistroProyectoDeInvestigacion extends javax.swing.JDialog {
         if (validar()) {
             ProyectoDeInvestigacion pi = new ProyectoDeInvestigacion();
             
+            pi.setTipo("PI");
+            
             pi.setIdAsesor(opcionDeGrado.getIdAsesor());
             pi.setAsesor(opcionDeGrado.getAsesor());
+            pi.setEstudiantes(opcionDeGrado.getEstudiantes());
             
             pi.setIdDirector(opcionDeGrado.getIdDirector());
             pi.setDirector(opcionDeGrado.getDirector());
@@ -226,6 +237,7 @@ public class RegistroProyectoDeInvestigacion extends javax.swing.JDialog {
             pi.setSublineaDeInvestigacion(opcionDeGrado.getSublineaDeInvestigacion());
             
             pi.setDescripcionBreve(opcionDeGrado.getDescripcionBreve());
+            pi.setTiempoDeEjecucionEnMeses(opcionDeGrado.getTiempoDeEjecucionEnMeses());
             pi.setFechaYHoraDeRecepcion(opcionDeGrado.getFechaYHoraDeRecepcion());
             pi.setJustificacion(this.jTextArea2.getText());
             pi.setNombre(opcionDeGrado.getNombre());

@@ -19,6 +19,7 @@ public class OpcionDeGrado extends EntidadBase {
     private String idAsesor;
     private Evaluador asesor;
     private String estado = "0";
+    private String tipo;
 
     public String getNombre() {
         return nombre;
@@ -111,7 +112,8 @@ public class OpcionDeGrado extends EntidadBase {
                 + getTiempoDeEjecucionEnMeses() + ";"
                 + getIdDirector() + ";"
                 + getIdAsesor() + ";"
-                + getEstado();
+                + getEstado() + ";"
+                + getTipo();
     }
 
     public String getIdLineaDeInvestigacion() {
@@ -162,6 +164,20 @@ public class OpcionDeGrado extends EntidadBase {
      */
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the tipo
+     */
+    public String getTipo() {
+        return tipo;
+    }
+
+    /**
+     * @param tipo the tipo to set
+     */
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
     
 }

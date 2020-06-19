@@ -25,6 +25,10 @@ public class Logica<T extends EntidadBase> {
         return datos.obtener(condicion, true);
     }
     
+    public ArrayList<T> get(Predicate<T> condicion, boolean lazy) {
+        return datos.obtener(condicion, lazy);
+    }
+    
     public boolean registrar(T entidad) {
         return datos.registrar(entidad);
     }

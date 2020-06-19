@@ -170,6 +170,11 @@ public class RegistroProyectoDeGradoDialog extends javax.swing.JDialog {
         jTextField6.setEditable(false);
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Proyecto de investigación aplicada", "Práctica empresarial" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Agregar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -448,7 +453,7 @@ public class RegistroProyectoDeGradoDialog extends javax.swing.JDialog {
     }
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -503,6 +508,10 @@ public class RegistroProyectoDeGradoDialog extends javax.swing.JDialog {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         sublineaDeInvestigacionSeleccionada = lsli.get(_sli -> _sli.getNombre().equals(String.valueOf(jComboBox2.getSelectedItem()))).get(0);
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -1,1 +1,2 @@
-1;Prácticas 1;1;1;2020-06-19T10:14:44.060425;6;1;1;0;Razón 1;Sistemas ;123456;123456780;Calle falsa;razón1@fake.com;Desarrollador
+1;Práctica 1;Práctica 1;2;2;2020-06-19T14:49:50.477792700;5;1;1;0;PE;nn;Sistemas;1234567;3201234567;Calle Falsa 123;nn@gmail.om;Ninguna
+2;Práctica 2;Práctica 2;2;2;2020-06-19T15:09:10.827013100;6;1;1;0;PE;Nn;Sistemas;1234567;1234567891;Calle Falsa 123;nn@gmail.com;Ninguna
