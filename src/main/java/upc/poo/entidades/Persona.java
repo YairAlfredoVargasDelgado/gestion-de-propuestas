@@ -51,6 +51,7 @@ public class Persona extends EntidadBase {
         this.contacto = contacto;
     }
     
+    @Override
     public String toString() {
         return super.toString() + ";" + nombre.toString() + ";"
                 + identificacion.toString() + ";"

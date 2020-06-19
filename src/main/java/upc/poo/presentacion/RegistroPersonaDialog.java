@@ -319,10 +319,19 @@ public class RegistroPersonaDialog extends javax.swing.JDialog {
         if (!validarFormulario()) {
             JOptionPane.showMessageDialog(this, "Verifique los datos antes de continuar");
         } else {
+            aEntidad();
             switch (entidad) {
                 case "Estudiante":
                     LogicaEstudiante le = new LogicaEstudiante();
-                    if (le.registrar((Estudiante)p)) {
+                    Estudiante e = new Estudiante();
+                    
+                    e.setContacto(p.getContacto());
+                    e.setFechaNacimiento(p.getFechaNacimiento());
+                    e.setGenero(p.getGenero());
+                    e.setIdentificacion(p.getIdentificacion());
+                    e.setNombre(p.getNombre());
+                    
+                    if (le.registrar(e)) {
                         JOptionPane.showMessageDialog(this, "El registro del estudiante fue exitoso");
                         return;
                     }   JOptionPane.showMessageDialog(this, "El registro del estudiante falló");
@@ -332,7 +341,15 @@ public class RegistroPersonaDialog extends javax.swing.JDialog {
                     break;
                 default:
                     LogicaAsesor la = new LogicaAsesor();
-                    if (la.registrar((Asesor)p)) {
+                    Asesor a = new Asesor();
+                    
+                    a.setContacto(p.getContacto());
+                    a.setFechaNacimiento(p.getFechaNacimiento());
+                    a.setGenero(p.getGenero());
+                    a.setIdentificacion(p.getIdentificacion());
+                    a.setNombre(p.getNombre());
+                    
+                    if (la.registrar(a)) {
                         JOptionPane.showMessageDialog(this, "El registro del asesor fue exitoso");
                         return;
                     }   JOptionPane.showMessageDialog(this, "El registro del asesor falló");

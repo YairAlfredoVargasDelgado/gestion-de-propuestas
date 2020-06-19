@@ -2,7 +2,7 @@ package upc.poo.entidades;
 
 import java.util.Collection;
 
-public class Director extends Persona {
+public class Director extends Profesor {
     
     private String IdLineaDeInvestigacion;
     private LineaDeInvestigacion lineaDeInvestigacion;
@@ -32,4 +32,9 @@ public class Director extends Persona {
         this.IdLineaDeInvestigacion = IdLineaDeInvestigacion;
     }
     
+    @Override
+    public String toString() {
+        return super.toString() + ";"
+                + this.IdLineaDeInvestigacion;
+    }
 }

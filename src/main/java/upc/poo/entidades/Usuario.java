@@ -4,6 +4,7 @@ public class Usuario extends EntidadBase{
     
     private String nombre;
     private String contraseña;
+    private String rol;
 
     public String getNombre() {
         return nombre;
@@ -24,7 +25,22 @@ public class Usuario extends EntidadBase{
     @Override
     public String toString() {
         return super.toString()
-                + nombre + ";"
-                + contraseña;
+                + getNombre() + ";"
+                + getContraseña() + ";"
+                + getRol();
+    }
+
+    /**
+     * @return the rol
+     */
+    public String getRol() {
+        return rol;
+    }
+
+    /**
+     * @param rol the rol to set
+     */
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }

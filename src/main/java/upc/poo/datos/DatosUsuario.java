@@ -16,6 +16,7 @@ public class DatosUsuario extends Datos<Usuario> {
         u.setId(d[0]);
         u.setNombre(d[1]);
         u.setContraseña(d[2]);
+        u.setRol(d[3]);
         
         return u;
     }

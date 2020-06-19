@@ -2,7 +2,6 @@ package upc.poo.presentacion;
 
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import upc.poo.entidades.Estudiante;
 import upc.poo.entidades.PracticaEmpresarial;
 import upc.poo.entidades.ProyectoDeInvestigacion;
 import upc.poo.logica.LogicaEstudiante;
@@ -11,9 +10,9 @@ import upc.poo.logica.LogicaProyectoDeInvestigacion;
 
 public class EstudiantesFrame extends javax.swing.JFrame {
 
-    private LogicaEstudiante le = new LogicaEstudiante();
-    private LogicaPracticaEmpresarial lpe = new LogicaPracticaEmpresarial();
-    private LogicaProyectoDeInvestigacion lpi = new LogicaProyectoDeInvestigacion();
+    private final LogicaEstudiante le = new LogicaEstudiante();
+    private final LogicaPracticaEmpresarial lpe = new LogicaPracticaEmpresarial();
+    private final LogicaProyectoDeInvestigacion lpi = new LogicaProyectoDeInvestigacion();
     
     public EstudiantesFrame() {
         initComponents();
@@ -195,7 +194,7 @@ public class EstudiantesFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new ComiteDialog(null, true).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenu2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMenu2KeyPressed

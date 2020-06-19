@@ -35,7 +35,6 @@ public class DatosPersona extends Datos<Persona> {
         
         p.setFechaNacimiento(LocalDate.parse(d[7]));
         p.setGenero(Genero.valueOf(d[8]));
-        
         c.setTelefonoFijo(d[9]);
         c.setTelefonoCelular(d[10]);
         c.setDireccion(d[11]);

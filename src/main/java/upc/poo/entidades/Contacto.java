@@ -43,7 +43,7 @@ public class Contacto {
         return telefonoFijo + ";"
                + telefonoCelular + ";"
                + direccion + ";"
-                + correoElectronico;
+               + correoElectronico;
     }
     
 }
